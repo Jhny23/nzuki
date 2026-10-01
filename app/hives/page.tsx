@@ -6,7 +6,7 @@ export default function Hives() {
       <p>Crafted straight from the hives. Pure, natural and unprocessed, every jar extracted specifically for you.</p>
       <img className="story" src="/nzuki-jars.webp" alt="Two jars of Nzuki honey beside a honey dipper and fresh honeycomb" />
       <div className="wgrid">
-        {why.map(([k, t, c]) => <div key={k}><span className="circ big"><img className="ph" src={`/t-${k}.webp`} alt="" /></span><h3>{t}</h3><small>{c}</small></div>)}
+        {why.map(([k, t, c]) => <div key={k}><span className="circ big"><img src={`/t-${k}.webp`} alt="" /></span><h3>{t}</h3><small>{c}</small></div>)}
       </div>
     </section>
   );

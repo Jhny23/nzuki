@@ -18,9 +18,9 @@ export default function Home() {
       </section>
       <div className="sec"><span>Explore our collection</span><Link href="/shop">VIEW ALL</Link></div>
       <section className="circles">
-        <Link href="/shop"><span className="circ"><img className="jr" src="/nzuki-jar.webp" alt="" style={{ height: "74%" }} /></span>Half a kilo</Link>
-        <Link href="/shop"><span className="circ"><img className="jr" src="/nzuki-jar.webp" alt="" /></span>One kilo</Link>
-        <Link href="/hives"><span className="circ"><img className="ph" src="/t-pure.webp" alt="" /></span>The hives</Link>
+        <Link href="/shop"><span className="circ"><img src="/nzuki-jar-circle.webp" alt="" /></span>Half a kilo</Link>
+        <Link href="/shop"><span className="circ"><img src="/nzuki-jar-circle.webp" alt="" /></span>One kilo</Link>
+        <Link href="/hives"><span className="circ"><img src="/t-pure.webp" alt="" /></span>The hives</Link>
       </section>
       <Link href="/hives" className="banner">
         <Bee size={30} />

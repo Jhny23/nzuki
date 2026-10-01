@@ -32,7 +32,7 @@ h1,h2,h3,.wm b,.sp-in b{font-family:var(--display),Georgia,serif;font-weight:500
 .circles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 20px;text-align:center}
 .circles a{display:grid;gap:9px;justify-items:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
 .circ{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 40% 30%,#EDE0B6,#D6BD85);box-shadow:0 0 0 3px #fff7,0 10px 16px -8px #3c250f66}
-.circ img.jr{height:88%;width:auto}.circ img.ph{width:100%;height:100%;object-fit:cover}
+.circ img{display:block;width:100%;height:100%;object-fit:cover}
 .circ.big{width:92px;height:92px;margin:0 auto}
 .banner{display:flex;align-items:center;gap:14px;margin:20px 20px 0;padding:16px 18px;border-radius:14px;background:var(--row);color:var(--amber)}
 .banner span{flex:1;display:grid;gap:4px}
