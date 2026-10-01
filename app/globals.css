@@ -66,4 +66,3 @@ input{display:block;width:100%;font:inherit;padding:10px 14px;margin-top:4px;bac
 .basket b,.sizes button.on{color:#1b1009}
 .veil{background:#000a}
 @media(max-width:640px){.hero{grid-template-columns:1fr}.photo{max-width:260px}}
-.cell{border:0;padding:0;font:inherit;color:#1b1009;cursor:pointer}
