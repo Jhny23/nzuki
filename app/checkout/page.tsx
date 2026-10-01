@@ -8,8 +8,8 @@ export default function Checkout() {
   const ok = lines.length && f.name && f.phone && f.area;
   const send = () => {
     const items = lines.map((l) => `${l.qty} x ${l.name} ${l.g}g`).join(", ");
-    const msg = `Hello Mzinga. Order: ${items}. Total ${kes(total)}. Name: ${f.name}. Phone: ${f.phone}. Delivery area: ${f.area}. ${f.note}`;
-    window.open(`https://wa.me/254700000000?text=${encodeURIComponent(msg)}`, "_blank");
+    const msg = `Hello Nzuki. Order: ${items}. Total ${kes(total)}. Name: ${f.name}. Phone: ${f.phone}. Delivery area: ${f.area}. ${f.note}`;
+    window.open(`https://wa.me/254712122293?text=${encodeURIComponent(msg)}`, "_blank");
     clear();
   };
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement>) => setF({ ...f, [k]: e.target.value });
