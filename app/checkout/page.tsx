@@ -15,6 +15,7 @@ export default function Checkout() {
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement>) => setF({ ...f, [k]: e.target.value });
   return (
     <section className="checkout">
+      <a className="back" href="/">&larr; Back to the honey</a>
       <h1>Checkout</h1>
       {lines.length === 0 ? <p>Your basket is empty. Add a jar first.</p> : (<>
         <ul>{lines.map((l) => <li key={l.key}>{l.qty} x {l.name}, {l.g}g <b>{kes(l.qty * l.price)}</b></li>)}</ul>

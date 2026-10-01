@@ -7,15 +7,13 @@ export default function Buy() {
   const { add } = useCart();
   const s = sizes[i];
   return (
-    <div className="buybox">
-      <div role="radiogroup" aria-label="Jar size" className="opts">
-        {sizes.map((x, n) => (
-          <button key={x.g} role="radio" aria-checked={n === i} className={n === i ? "on" : ""} onClick={() => setI(n)}>
-            <span>{x.label}</span><b>{kes(x.price)}</b>
-          </button>
-        ))}
-      </div>
-      <button className="add" onClick={() => add({ key: `honey-${s.g}`, name: "Raw honey", g: s.g, price: s.price })}>Add to basket</button>
+    <div className="tiles" role="radiogroup" aria-label="Jar size">
+      {sizes.map((x, n) => (
+        <button key={x.g} role="radio" aria-checked={n === i} className={`tile${n === i ? " on" : ""}`} onClick={() => setI(n)}>
+          <b>{kes(x.price)}</b><small>{x.label}, {x.g >= 1000 ? "1 kg" : x.g + " g"}</small>
+        </button>
+      ))}
+      <button className="add" onClick={() => add({ key: `honey-${s.g}`, name: "Raw honey", g: s.g, price: s.price })}>Add to basket<small>{kes(s.price)}</small></button>
     </div>
   );
 }

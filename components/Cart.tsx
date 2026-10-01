@@ -20,7 +20,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 }
 export function CartButton() {
   const { count, setOpen } = useCart();
-  return <button className="bag" onClick={() => setOpen(true)} aria-label={`Open basket, ${count} items`}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden><path d="M5 8h14l-1 12H6L5 8z" /><path d="M9 8V6a3 3 0 016 0v2" /></svg>{count > 0 && <b>{count}</b>}</button>;
+  return <button className="bag" onClick={() => setOpen(true)} aria-label={`Open basket, ${count} items`}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden><path d="M5 8h14l-1 12H6L5 8z" /><path d="M9 8V6a3 3 0 016 0v2" /></svg><span>Basket</span>{count > 0 && <b>{count}</b>}</button>;
 }
 function Drawer() {
   const { lines, change, total, open, setOpen } = useCart();
