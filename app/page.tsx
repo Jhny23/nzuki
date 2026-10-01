@@ -1,22 +1,27 @@
-import { sizes } from "@/lib/products";
-import SizeCell from "@/components/SizeCell";
+import Link from "next/link";
+import { products, kes } from "@/lib/products";
 export default function Home() {
+  const rows = [products.slice(0, 3), products.slice(3)];
   return (
     <>
       <section className="hero">
-        <div>
-          <h1>100% pure raw &amp; unprocessed honey.</h1>
-          <p>Crafted straight from the hive. Pure, natural, organic. Extracted specifically for you, and delivered in Nairobi.</p>
-        </div>
-        <img className="photo" src="/nzuki-jars.jpg" alt="Two jars of Nzuki raw and unprocessed honey" />
+        <h1>Honey from the hive, not the factory.</h1>
+        <p>Five honeys from small apiaries across Kenya. Raw, unheated, strained once through cloth. Pay by M-Pesa on delivery in Nairobi.</p>
       </section>
-      <section className="pick" aria-label="Choose your jar">
-        <h2>Choose your jar</h2>
-        <div className="row">{sizes.map((s, i) => <SizeCell key={s.g} s={s} i={i} />)}</div>
+      <section aria-label="Honeys" className="comb">
+        {rows.map((r, ri) => (
+          <div className="row" key={ri}>
+            {r.map((p, i) => (
+              <Link key={p.slug} href={`/honey/${p.slug}`} className="cell" style={{ ["--h" as string]: p.color, animationDelay: `${(ri * 3 + i) * 0.35}s` }}>
+                <span className="cin"><strong>{p.name}</strong><small>from {kes(p.sizes[0].price)}</small></span>
+              </Link>
+            ))}
+          </div>
+        ))}
       </section>
       <section className="note">
-        <h2>How ordering works</h2>
-        <p>Fill your basket, send the order on WhatsApp, and we confirm it with you. The jar is delivered to your door and you pay by M-Pesa when it arrives.</p>
+        <h2>How a jar gets to you</h2>
+        <p>We harvest when the frames are capped, never before. The honey is spun, strained and jarred within the week. You order here, we confirm on WhatsApp, and a rider brings it to your door. You pay when it arrives.</p>
       </section>
     </>
   );

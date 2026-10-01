@@ -10,8 +10,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<Line[]>([]);
   const [open, setOpen] = useState(false);
   const [ready, setReady] = useState(false);
-  useEffect(() => { try { setLines(JSON.parse(localStorage.getItem("nzuki") || "[]")); } catch {} setReady(true); }, []);
-  useEffect(() => { if (ready) try { localStorage.setItem("nzuki", JSON.stringify(lines)); } catch {} }, [lines, ready]);
+  useEffect(() => { try { setLines(JSON.parse(localStorage.getItem("mzinga") || "[]")); } catch {} setReady(true); }, []);
+  useEffect(() => { if (ready) try { localStorage.setItem("mzinga", JSON.stringify(lines)); } catch {} }, [lines, ready]);
   const add: Ctx["add"] = (l) => { setLines((p) => p.some((x) => x.key === l.key) ? p.map((x) => x.key === l.key ? { ...x, qty: x.qty + 1 } : x) : [...p, { ...l, qty: 1 }]); setOpen(true); };
   const change = (k: string, d: number) => setLines((p) => p.map((x) => x.key === k ? { ...x, qty: x.qty + d } : x).filter((x) => x.qty > 0));
   const total = lines.reduce((a, l) => a + l.price * l.qty, 0);
